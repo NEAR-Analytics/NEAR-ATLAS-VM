@@ -29,6 +29,8 @@ import * as nacl from "tweetnacl";
 import SecureIframe from "../components/SecureIframe";
 
 import { BarEl } from "../components/graphs/BarEl";
+import { ChartEl } from "../components/graphs/ChartEl";
+
 
 import { BasicTable } from "../components/tables/BasicTable";
 
@@ -148,6 +150,7 @@ const ApprovedTagsCustom = {
   Files: true,
   iframe: false,
   BarEl: true,
+  ChartEl: true,
   BasicTable: true,
 
 };
@@ -496,6 +499,8 @@ class VmStack {
       return <React.Fragment {...attributes}>{children}</React.Fragment>;
     }  else if (element === "BarEl") {
       return <BarEl {...attributes} />;
+    } else if (element === "ChartEl") {
+      return <ChartEl {...attributes} />;
     } else if (element === "BasicTable") {
       return <BasicTable {...attributes} />;
     } else if (element === "IpfsImageUpload") {
