@@ -1,7 +1,7 @@
 {
-  "name": "near-social-vm",
+  "name": "near-atlas-vm",
   "version": "1.0.0",
-  "description": "Near Social VM",
+  "description": "NEAR ATLAS VM",
   "main": "dist/index.js",
   "files": [
     "dist"
