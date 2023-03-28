@@ -30,6 +30,7 @@ import SecureIframe from "../components/SecureIframe";
 
 import { BarEl } from "../components/graphs/BarEl";
 
+import { BasicTable } from "../components/tables/BasicTable";
 
 
 const frozenNacl = Object.freeze({
@@ -147,6 +148,7 @@ const ApprovedTagsCustom = {
   Files: true,
   iframe: false,
   BarEl: true,
+  BasicTable: true,
 
 };
 
@@ -494,6 +496,8 @@ class VmStack {
       return <React.Fragment {...attributes}>{children}</React.Fragment>;
     }  else if (element === "BarEl") {
       return <BarEl {...attributes} />;
+    } else if (element === "BasicTable") {
+      return <BasicTable {...attributes} />;
     } else if (element === "IpfsImageUpload") {
       return (
         <div className="d-inline-block" key={attributes.key}>

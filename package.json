@@ -8,6 +8,8 @@
   ],
   "dependencies": {
     "@braintree/sanitize-url": "6.0.0",
+    "@emotion/react": "^11.10.6",
+    "@table-library/react-table-library": "^4.1.0",
     "acorn": "^8.8.0",
     "acorn-jsx": "^5.3.2",
     "big.js": "^6.1.1",
