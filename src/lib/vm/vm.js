@@ -30,6 +30,10 @@ import SecureIframe from "../components/SecureIframe";
 
 import { BarEl } from "../components/graphs/BarEl";
 import { ChartEl } from "../components/graphs/ChartEl";
+import { PieEl } from "../components/graphs/PieEl";
+
+import { ScatterEl } from "../components/graphs/ScatterEl";
+import { BubbleEl } from "../components/graphs/BubbleEl";
 
 
 import { BasicTable } from "../components/tables/BasicTable";
@@ -152,6 +156,9 @@ const ApprovedTagsCustom = {
   BarEl: true,
   ChartEl: true,
   BasicTable: true,
+  PieEl: true,
+  ScatterEl: true,
+  BubbleEl: true,
 
 };
 
@@ -497,10 +504,16 @@ class VmStack {
       return <Markdown {...attributes} />;
     } else if (element === "Fragment") {
       return <React.Fragment {...attributes}>{children}</React.Fragment>;
-    }  else if (element === "BarEl") {
+    } else if (element === "BarEl") {
       return <BarEl {...attributes} />;
     } else if (element === "ChartEl") {
       return <ChartEl {...attributes} />;
+    } else if (element === "ScatterEl") {
+      return <ScatterEl {...attributes} />;
+    } else if (element === "BubbleEl") {
+      return <BubbleEl {...attributes} />;
+    } else if (element === "PieEl") {
+      return <PieEl {...attributes} />;
     } else if (element === "BasicTable") {
       return <BasicTable {...attributes} />;
     } else if (element === "IpfsImageUpload") {
