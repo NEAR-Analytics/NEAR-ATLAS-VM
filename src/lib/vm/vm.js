@@ -35,6 +35,9 @@ import { PieEl } from "../components/graphs/PieEl";
 import { ScatterEl } from "../components/graphs/ScatterEl";
 import { BubbleEl } from "../components/graphs/BubbleEl";
 
+import { LineEl } from "../components/graphs/LineEl";
+
+
 
 import { BasicTable } from "../components/tables/BasicTable";
 
@@ -159,6 +162,7 @@ const ApprovedTagsCustom = {
   PieEl: true,
   ScatterEl: true,
   BubbleEl: true,
+  LineEl: true,
 
 };
 
@@ -510,6 +514,8 @@ class VmStack {
       return <ChartEl {...attributes} />;
     } else if (element === "ScatterEl") {
       return <ScatterEl {...attributes} />;
+    } else if (element === "LineEl") {
+      return <LineEl {...attributes} />;
     } else if (element === "BubbleEl") {
       return <BubbleEl {...attributes} />;
     } else if (element === "PieEl") {
