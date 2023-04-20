@@ -7,7 +7,7 @@
     "dist"
   ],
   "dependencies": {
-    "@braintree/sanitize-url": "6.0.0",
+    "@braintree/sanitize-url": "6.0.1",
     "@emotion/react": "^11.10.6",
     "@table-library/react-table-library": "^4.1.0",
     "acorn": "^8.8.0",
