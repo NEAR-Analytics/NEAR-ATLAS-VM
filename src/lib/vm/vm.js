@@ -40,7 +40,7 @@ import { LineEl } from "../components/graphs/LineEl";
 
 
 import { BasicTable } from "../components/tables/BasicTable";
-import { Table } from "../components/tables/react_tailwind_table/Table";
+import { RTable } from "../components/tables/Table";
 
 
 const frozenNacl = Object.freeze({
@@ -162,7 +162,7 @@ const ApprovedTagsCustom = {
   BarEl: true,
   ChartEl: true,
   BasicTable: true,
-  Table: true,
+  RTable: true,
   PieEl: true,
   ScatterEl: true,
   BubbleEl: true,
@@ -524,8 +524,8 @@ class VmStack {
       return <BubbleEl {...attributes} />;
     } else if (element === "PieEl") {
       return <PieEl {...attributes} />;
-    } else if (element === "Table") {
-      return <Table {...attributes} />;
+    } else if (element === "RTable") {
+      return <RTable {...attributes} />;
     } else if (element === "BasicTable") {
       return <BasicTable {...attributes} />;
     } else if (element === "IpfsImageUpload") {
