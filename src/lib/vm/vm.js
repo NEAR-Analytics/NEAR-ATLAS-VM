@@ -37,10 +37,10 @@ import { BubbleEl } from "../components/graphs/BubbleEl";
 
 import { LineEl } from "../components/graphs/LineEl";
 
+import { ReactChart } from "../components/react_chart/main";
 
 
 import { BasicTable } from "../components/tables/BasicTable";
-import { RTable } from "../components/tables/Table";
 
 
 const frozenNacl = Object.freeze({
@@ -167,6 +167,7 @@ const ApprovedTagsCustom = {
   ScatterEl: true,
   BubbleEl: true,
   LineEl: true,
+  ReactChart: true,
 
 };
 
@@ -524,10 +525,10 @@ class VmStack {
       return <BubbleEl {...attributes} />;
     } else if (element === "PieEl") {
       return <PieEl {...attributes} />;
-    } else if (element === "RTable") {
-      return <RTable {...attributes} />;
     } else if (element === "BasicTable") {
       return <BasicTable {...attributes} />;
+    } else if (element === "ReactChart") {
+      return <ReactChart {...attributes} />;
     } else if (element === "IpfsImageUpload") {
       return (
         <div className="d-inline-block" key={attributes.key}>
