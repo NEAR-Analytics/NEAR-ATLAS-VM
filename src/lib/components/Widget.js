@@ -26,6 +26,8 @@ import Big from "big.js";
 import uuid from "react-uuid";
 import { isFunction } from "react-bootstrap-typeahead/types/utils";
 
+
+
 const AcornOptions = {
   ecmaVersion: 13,
   allowReturnOutsideFunction: true,

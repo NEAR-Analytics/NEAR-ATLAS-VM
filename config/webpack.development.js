@@ -3,6 +3,9 @@ const { HotModuleReplacementPlugin } = require("webpack");
 
 module.exports = () => ({
   devtool: false,
+  entry: {
+    main: ['./src/global.css'],
+  },
   module: {
     rules: [
       {
@@ -25,7 +28,10 @@ module.exports = () => ({
               postcssOptions: {
                 // postcss plugins, can be exported to postcss.config.js
                 plugins: function () {
-                  return [require("autoprefixer")];
+                  return [
+                    require("tailwindcss"),
+                    require("autoprefixer"),
+                  ];
                 },
               },
             },

@@ -1,5 +1,4 @@
 import ResizableBox from "../ResizableBox";
-import useDemoConfig from "../useDemoConfig";
 import React from "react";
 import { Chart } from "react-charts";
 
@@ -33,34 +32,47 @@ export default function BarCustom(props) {
 
 
 
-console.log("data", data);
-console.log("primaryAxis", primaryAxis);
-console.log("secondaryAxes", secondaryAxes);
+console.log("props", props);
 
 
+return (
+  <>
 
-  return (
-    <>
-
-
-    {/* <ResizableBox
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        padding: "12px",
+        minHeight: "400px",
+      }}
+    >
+      {/* <div
         style={{
-          background: "rgba(0, 27, 45, 0.9)",
-          padding: ".5rem",
-          borderRadius: "5px",
+          flex: "0 0 auto",
+          padding: "10px",
         }}
-      > */}
+      >
+        {options.HeaderTitle}
+      </div> */}
+      <div
+        style={{
+          flex: 2,
+          minHeight: options.minHeight,
 
+        }}
+      >
         <Chart
           options={{
             data,
             primaryAxis,
             secondaryAxes,
             dark: true,
+
           }}
         />
+      </div>
+    </div>
+  </>
+);
 
-      {/* </ResizableBox> */}
-    </>
-  );
 }

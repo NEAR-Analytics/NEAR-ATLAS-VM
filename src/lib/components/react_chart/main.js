@@ -50,7 +50,7 @@ export const ReactChart = (props) => {
 
 
     return (
-      <div>
+      <>
         {/* only show by chart_name */}
         {/* {chart_name === "Line" && <Line options={options} data={data} />}
         {chart_name === "Bar" && <Bar options={options} data={data} />}
@@ -84,19 +84,6 @@ export const ReactChart = (props) => {
 
 
 
-
-
-        {/* {components.map(([label, Comp]) => {
-          return (
-            <div key={label + ""}>
-              <h1>{label}</h1>
-              <div>
-                <Comp />
-              </div>
-            </div>
-          );
-        })} */}
-        <div />
-      </div>
+      </>
     );
   }

@@ -10,7 +10,9 @@ module.exports = () => {
     //   // filename: "[name].[contenthash].bundle.js",
     //   filename: "index.js",
     // },
+
     devtool: false,
+
     module: {
       rules: [
         // {
@@ -20,6 +22,11 @@ module.exports = () => {
         //   //     sourceMap: false,
         //   //   },
         // },
+        {
+          test: /\.css$/i,
+          use: ['style-loader', 'css-loader', 'postcss-loader'],
+        },
+
         {
           test: /\.(scss|css)$/,
           use: [
@@ -40,7 +47,10 @@ module.exports = () => {
                 postcssOptions: {
                   // postcss plugins, can be exported to postcss.config.js
                   plugins: function () {
-                    return [require("autoprefixer")];
+                    return [
+                      require("tailwindcss"),
+                      require("autoprefixer"),
+                    ];
                   },
                 },
               },

@@ -28,6 +28,12 @@ export default function Bar() {
     []
   );
 
+
+console.log("data", data);
+console.log("primaryAxis", primaryAxis);
+console.log("secondaryAxes", secondaryAxes);
+
+
   return (
     <>
       <button onClick={randomizeData}>Randomize Data</button>

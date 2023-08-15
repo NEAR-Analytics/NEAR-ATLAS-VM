@@ -24,6 +24,12 @@ export default function DyanmicContainer() {
     []
   );
 
+  console.log("data", data);
+  console.log("primaryAxis", primaryAxis);
+  console.log("secondaryAxes", secondaryAxes);
+
+
+
   return (
     <>
       <p>
