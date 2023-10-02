@@ -164,13 +164,19 @@ export const CommitModal = (props) => {
 
   const show =
     !!commit && showIntent && !asyncCommitStarted && writePermission !== null;
+    if (!show) return null;
+    return (
+      <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center z-40">
+        <div className="bg-white rounded-lg overflow-y-auto max-h-full w-3/4 z-50">
+          <div className="flex justify-between items-center p-4 border-b border-gray-200">
+            <h5 className="text-lg font-medium">Saving data</h5>
+            <button onClick={onCancel} className="text-gray-500 hover:text-gray-700 focus:outline-none">
+              &times;
+            </button>
+          </div>
+          <div className="p-4">
 
-  return (
-    <Modal size="xl" centered scrollable show={show} onHide={onCancel}>
-      <Modal.Header closeButton>
-        <Modal.Title>Saving data</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
+
         {cantCommit ? (
           <div>
             <h5>
@@ -270,28 +276,33 @@ export const CommitModal = (props) => {
         ) : (
           Loading
         )}
-      </Modal.Body>
-      <Modal.Footer>
-        <button
-          className="btn btn-success"
-          disabled={!commit?.data || commitInProgress || cantCommit}
-          onClick={(e) => {
-            e.preventDefault();
-            onCommit();
-          }}
-        >
-          {commitInProgress && Loading} Save Data
-        </button>
-        <button
-          className="btn btn-secondary"
-          onClick={onCancel}
-          disabled={commitInProgress}
-        >
-          Close
-        </button>
-      </Modal.Footer>
-    </Modal>
-  );
+
+
+
+          </div>
+          <div className="flex justify-between p-4 border-t border-gray-200">
+            <button
+              className="px-4 py-2 rounded-md text-white bg-green-500 hover:bg-green-600"
+              disabled={!commit?.data || commitInProgress || cantCommit}
+              onClick={(e) => {
+                e.preventDefault();
+                onCommit();
+              }}
+            >
+              {commitInProgress ? "Loading..." : "Save Data"}
+            </button>
+            <button
+              className="px-4 py-2 rounded-md text-gray-500 border border-gray-300 hover:bg-gray-100"
+              onClick={onCancel}
+              disabled={commitInProgress}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+        <div className="fixed top-0 left-0 w-full h-full bg-black opacity-50 z-30" onClick={onCancel}></div>
+      </div>
+    );
 };
 
 export const CommitButton = (props) => {
@@ -315,7 +326,7 @@ export const CommitButton = (props) => {
     <>
       <button
         {...rest}
-        disabled={disabled || !data || !!computedData || !accountId}
+        className={`px-4 py-2 ${disabled || !data || !!computedData || !accountId ? "bg-gray-400 cursor-not-allowed" : "bg-blue-500 hover:bg-blue-600 text-white"} rounded-md`}
         onClick={(e) => {
           e.preventDefault();
           setComputedData(typeof data === "function" ? data() : data);
@@ -324,8 +335,7 @@ export const CommitButton = (props) => {
           }
         }}
       >
-        {!!computedData && Loading}
-        {children}
+        {!!computedData ? "Loading..." : children}
       </button>
       <CommitModal
         show={!!computedData}

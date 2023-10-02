@@ -31,8 +31,8 @@ import {
 
 
   export const ChartEl = (props) => {
-    const { type, data } = props;
+    const { type, data, options } = props;
     return (
-        <Chart type={type} data={data} />
+        <Chart type={type} data={data} options={options} />
     );
   }
