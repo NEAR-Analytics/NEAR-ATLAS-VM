@@ -32,6 +32,7 @@ import BN from "bn.js";
 import * as nacl from "tweetnacl";
 import SecureIframe from "../components/SecureIframe";
 
+import { CohortEl } from "../components/graphs/CohortEl";
 import { BarEl } from "../components/graphs/BarEl";
 import { ChartEl } from "../components/graphs/ChartEl";
 import { PieEl } from "../components/graphs/PieEl";
@@ -164,6 +165,7 @@ const ApprovedTagsCustom = {
   Files: true,
   iframe: false,
   BarEl: true,
+  CohortEl: true,
   ChartEl: true,
   BasicTable: true,
   RTable: true,
@@ -519,7 +521,10 @@ class VmStack {
       return <React.Fragment {...attributes}>{children}</React.Fragment>;
     } else if (element === "BarEl") {
       return <BarEl {...attributes} />;
-    } else if (element === "ChartEl") {
+    } else if (element === "CohortEl") {
+      return <CohortEl {...attributes} />;
+    }
+    else if (element === "ChartEl") {
       return <ChartEl {...attributes} />;
     } else if (element === "ScatterEl") {
       return <ScatterEl {...attributes} />;
